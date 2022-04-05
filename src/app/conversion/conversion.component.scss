@@ -1,0 +1,15 @@
+.container,
+.btn {
+    width: 60%;
+    margin: auto;
+
+    .select,
+    .convert {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .convert {
+        margin: 20px 0;
+    }
+}

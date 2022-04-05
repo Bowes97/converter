@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="select">
+        <mat-form-field appearance="fill">
+            <mat-label>Виберіть валюту</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let c of currency" [value]="c.currency" (click)="setFirstVariable($event)">
+                    {{ c.currency }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Виберіть валюту</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let c of currency" [value]="c.currency" (click)="setSecondVariable($event)">
+                    {{ c.currency }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <form class="convert">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Вкажіть суму</mat-label>
+            <input matInput placeholder="Вкажіть суму" [(ngModel)]="give" name="something" type="number">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Вкажіть суму</mat-label>
+            <input matInput placeholder="Вкажіть суму" [(ngModel)]="take" name="something2" type="number">
+        </mat-form-field>
+    </form>
+    <div class="btn">
+        <ng-container *ngIf="t === true; else elseTemplate">
+            <button style="width: 100%;" (click)="setNumber()" mat-raised-button color="primary"
+                type="submit">Конвертувати</button>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <button style="width: 100%;" (click)="setNumber()" mat-raised-button color="primary" type="submit"
+                (click)="changeBTN()">Очистити</button>
+        </ng-template>
+    </div>
+</div>
